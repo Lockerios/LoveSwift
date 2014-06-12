@@ -10,15 +10,48 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    func greet(name: String, day:String) -> String {
-        return "Hello \(name), today is \(day)"
+    func greet(name: String, day:String, dinner:String) -> String {
+        return "Hello \(name), today is \(day), I have eat \(dinner)"
     }
+    
+    func getGasPrices() -> (Double, Double, Double) {
+        return (3.59, 3.69, 3.79)
+    }
+    
+    func sumOf(numbers: Int...) -> Int {
+        var sum = 0
+        for number in numbers {
+            sum += number
+        }
+        
+        return sum
+    }
+    
+    func avgOf(numbers: Int...) -> Float {
+        var avg :Float = 0
+        var sum = 0
+        for number in numbers {
+            sum += number
+        }
+        var count :Int = numbers.count
+        avg = Float(Int(sum) / Int(count))
+        
+        return avg
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
      
-        println(greet("Bob", day: "Tuesday"))
+        println(greet("Bob", day: "Tuesday", dinner: "pizza"))
+        
+        println(getGasPrices())
+        
+        println(sumOf(43, 333, 12))
+        
+        println(avgOf(43, 333, 12))
         
         println("Hello, world test")
         
