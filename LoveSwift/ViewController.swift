@@ -9,11 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-                            
+    
+    func greet(name: String, day:String) -> String {
+        return "Hello \(name), today is \(day)"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
+     
+        println(greet("Bob", day: "Tuesday"))
+        
         println("Hello, world test")
         
         let myFloat:Float = 4
@@ -122,7 +128,19 @@ class ViewController: UIViewController {
         
         println(countm)
         
+        var firstForLoop = 0
+        for i in 0..3 {
+            firstForLoop += i
+        }
         
+        println(firstForLoop)
+        
+        var secondForLoop = 0
+        for var i = 0; i < 3; ++i {
+            secondForLoop += i
+        }
+        
+        println(secondForLoop)
     }
     
     
